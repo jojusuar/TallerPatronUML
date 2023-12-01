@@ -13,8 +13,12 @@ public class TelegramNotificador extends NotificadorDecorador{
     public TelegramNotificador(Notificable wrapee) {
         super(wrapee);
     }
-    
-    public void notificarPorTelegram(int telefono){
-        System.out.println("Notificando a "+telefono+" por Telegram");
+
+    @Override
+    public void notificar() {
+        wrapee.notificar();
+        System.out.println("Notificando por Telegram");
     }
+    
+    
 }

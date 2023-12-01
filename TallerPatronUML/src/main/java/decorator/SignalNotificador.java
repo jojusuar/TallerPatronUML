@@ -13,8 +13,10 @@ public class SignalNotificador extends NotificadorDecorador{
     public SignalNotificador(Notificable wrapee) {
         super(wrapee);
     }
-    
-    public void notificarPorSignal(int telefono){
-        System.out.println("Notificando a "+telefono+" por Signal");
+
+    @Override
+    public void notificar() {
+        wrapee.notificar();
+        System.out.println("Notificando por Signal");
     }
 }
