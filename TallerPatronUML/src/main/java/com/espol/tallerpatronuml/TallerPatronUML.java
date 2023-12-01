@@ -23,26 +23,9 @@ public class TallerPatronUML {
         
         //FACADE
         AtencionVirtualFachada fachada = new AtencionVirtualFachada("https://subcanales.com");
-        CanalMovil canalMovil = new CanalMovil();
-        CanalTelefonico canalTelefonico = new CanalTelefonico();
-        CanalWeb canalWeb = new CanalWeb();
         Operador operador = new Operador("Operador1", "123456789");
-
         fachada.recibirConsulta();
         fachada.realizarTransaccion();
-
-        String consultaMovil = canalMovil.recibirConsultaMovil();
-        String consultaTelefonica = canalTelefonico.recibirConsultaTelefonica();
-        String consultaWeb = canalWeb.recibirConsultaWeb();
-
-        String nombreOperador = operador.getNombre();
-        String rucOperador = operador.getRUC();
-
-        System.out.println("Consulta a través de Canal Móvil: " + consultaMovil);
-        System.out.println("Consulta a través de Canal Telefónico: " + consultaTelefonica);
-        System.out.println("Consulta a través de Canal Web: " + consultaWeb);
-        System.out.println("Nombre del operador: " + nombreOperador);
-        System.out.println("RUC del operador: " + rucOperador);
     }
     
     public static void sendEverywhere(Notificador n){
