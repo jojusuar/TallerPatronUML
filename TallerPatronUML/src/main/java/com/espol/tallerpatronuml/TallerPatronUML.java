@@ -13,17 +13,12 @@ public class TallerPatronUML {
 
     public static void main(String[] args) {
         //DECORATOR
-        int miTelefono = 991096645; 
-        Notificable notificador = new Notificador("Hola mundo");
-        
-        WhatsAppNotificador notificadorW = new WhatsAppNotificador(notificador);
-        notificadorW.notificarPorEmail("jojusuar@espol.edu.ec");
-        notificadorW.notificarPorSMS(miTelefono);
-        notificadorW.notificarPorWhatsApp(miTelefono);
-        
-        SignalNotificador notificadorS = new SignalNotificador(notificador);
-        notificadorS.notificarPorEmail("jojusuar@espol.edu.ec");
-        notificadorS.notificarPorSMS(miTelefono);
-        notificadorS.notificarPorSignal(miTelefono);
+        Notificador notificador = new Notificador("Hola mundo");
+        sendEverywhere(notificador);
+    }
+    
+    public static void sendEverywhere(Notificador n){
+        Notificable notificador = new TelegramNotificador(new WhatsAppNotificador(new WireNotificador(new SignalNotificador(n))));
+        notificador.notificar();
     }
 }

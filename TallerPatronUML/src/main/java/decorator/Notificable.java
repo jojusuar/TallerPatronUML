@@ -10,6 +10,5 @@ package decorator;
  */
 public interface Notificable {
     
-    public void notificarPorEmail(String correo);
-    public void notificarPorSMS(int telefono);
+    public void notificar();
 }

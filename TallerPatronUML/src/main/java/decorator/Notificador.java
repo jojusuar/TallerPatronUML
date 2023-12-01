@@ -17,13 +17,10 @@ public class Notificador implements Notificable{
     }
 
     @Override
-    public void notificarPorEmail(String correo) {
-        System.out.println("Notificando a "+correo);
-    }
-
-    @Override
-    public void notificarPorSMS(int telefono) {
-        System.out.println("Notificando a "+telefono+" por SMS");
+    public void notificar() {
+       System.out.println("Mensaje: "+mensaje);
+       System.out.println("Notificando por correo");
+       System.out.println("Notificando por SMS");
     }
     
 }
