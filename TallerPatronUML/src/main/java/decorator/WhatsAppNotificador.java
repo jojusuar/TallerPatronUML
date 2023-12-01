@@ -13,8 +13,12 @@ public class WhatsAppNotificador extends NotificadorDecorador{
     public WhatsAppNotificador(Notificable wrapee) {
         super(wrapee);
     }
-    
-    public void notificarPorWhatsApp(int telefono){
-        System.out.println("Notificando a "+telefono+" por WhatsApp");
+
+    @Override
+    public void notificar() {
+        wrapee.notificar();
+        System.out.println("Notificando por WhatsApp");
     }
+    
+    
 }

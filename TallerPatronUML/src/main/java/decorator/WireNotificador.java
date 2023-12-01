@@ -14,7 +14,9 @@ public class WireNotificador extends NotificadorDecorador{
         super(wrapee);
     }
     
-    public void notificarPorWire(int telefono){
-        System.out.println("Notificando a "+telefono+" por Wire");
+    @Override
+    public void notificar(){
+        wrapee.notificar();
+        System.out.println("Notificando por Wire");
     }
 }

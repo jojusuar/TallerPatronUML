@@ -8,22 +8,11 @@ package decorator;
  *
  * @author euclasio
  */
-public class NotificadorDecorador implements Notificable{
+public abstract class NotificadorDecorador implements Notificable{
     
-    private Notificable wrapee;
+    protected Notificable wrapee;
 
     public NotificadorDecorador(Notificable wrapee){
         this.wrapee = wrapee;
-    }
-    
-    @Override
-    public void notificarPorEmail(String correo) {
-        System.out.println("Notificando a "+correo);
-    }
-
-    @Override
-    public void notificarPorSMS(int telefono) {
-        System.out.println("Notificando a "+telefono+" por SMS");
-    }
-    
+    } 
 }
